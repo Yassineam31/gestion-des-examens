@@ -16,13 +16,25 @@ class StudentFactory extends Factory
      * @return array<string, mixed>
      */
     public function definition(): array
-    {
-        return [        
-            'firstname' => fake()->firstName(),
-            'lastname'  => fake()->lastName(),
-            'email'     => fake()->unique()->safeEmail(),
-            'mobile'    => fake()->unique()->phoneNumber(),
-            "filiere_id"=> Filiere::inRandomOrder()->first()
-        ];
+{
+    $filiere = Filiere::inRandomOrder()->first();
+
+    if (!$filiere) {
+        // Create a default filiere
+        $filiere = Filiere::create([
+            // Fill in necessary fields for a default filiere
+            'name' => 'Default Filiere',
+            // other required fields
+        ]);
     }
+
+    return [        
+        'firstname' => fake()->firstName(),
+        'lastname'  => fake()->lastName(),
+        'email'     => fake()->unique()->safeEmail(),
+        'mobile'    => fake()->unique()->phoneNumber(),
+        'filiere_id'=> $filiere->id,
+    ];
+}
+
 }
