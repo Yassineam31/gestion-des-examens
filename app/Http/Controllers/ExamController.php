@@ -34,17 +34,22 @@ class ExamController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'title' => 'required',
+            'title' => 'required|unique:exams', // Ajout de la règle 'unique' pour vérifier l'unicité du titre
             'date' => 'required|date',
             'course_id' => 'required|exists:courses,id',
         ]);
-
+    
+        // Vérifiez si le titre de l'examen existe déjà
+        $existingExam = Exam::where('title', $validatedData['title'])->first();
+    
+        if ($existingExam) {
+            return redirect()->route('exams.index')->with('error', 'Un examen avec ce titre existe déjà.');
+        }
+    
         Exam::create($validatedData);
-
+    
         return redirect()->route('exams.index')->with('success', 'Exam created successfully.');
-
     }
-
     /**
      * Display the specified resource.
      */

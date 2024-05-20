@@ -86,7 +86,7 @@
                         ">
                             <td>{{ $result->id }}</td>
                             <td>{{ $result->student->firstname . ' ' . $result->student->lastname }}</td>
-                            <td>{{ $result->exam->title }}</td>
+                            <td>{{ optional($result->exam)->title }}</td>
                             <td>{{ $result->grade }}</td>
                             <td>
                                 @if ($result->note >= 10)
