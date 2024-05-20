@@ -2,23 +2,28 @@
 
 @section('content')
     <div class="container">
-        <div class="w-75 border pb-5 m-auto mt-5 rounded position-relative" style="height: 60vh">
-            <h2 class="text-center text-decoration-underline   alert alert-info">Plateforme des Examens</h2>
+        <div class="w-75 border pb-5 m-auto mt-5 rounded position-relative" style="height: 70vh">
+            <h2 class="text-center text-decoration-underline alert alert-info">Plateforme de Gestion des Examens</h2>
             <p class="px-2">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati,
-                natus voluptas ratione numquam hic cum illum,
-                incidunt a dolorum sint cupiditate aliquam harum blanditiis dolor neque nobis ipsum minus illo?
+                Bienvenue sur notre plateforme de gestion des examens, un outil complet conçu pour faciliter la gestion des étudiants, des cours et des examens. Notre application offre une interface intuitive et des fonctionnalités robustes pour assurer une expérience utilisateur fluide et efficace.
             </p>
             <p class="px-2">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati,
-                natus voluptas ratione numquam hic cum illum,
-                natus voluptas ratione numquam hic cum illum, natus voluptas ratione numquam hic cum illum,
-                natus voluptas ratione numquam hic cum illum, natus voluptas ratione numquam hic cum illum,
-                incidunt a dolorum sint cupiditate aliquam harum blanditiis dolor neque nobis ipsum minus illo?
+                Notre plateforme permet aux administrateurs et aux enseignants de gérer facilement les informations des étudiants, les programmes de cours, les horaires des examens et la publication des résultats. Grâce à notre système centralisé, toutes les données sont accessibles en un seul endroit, ce qui simplifie la coordination et la communication entre les différentes parties prenantes.
             </p>
+            <p class="px-2">
+                Les principales fonctionnalités de notre application incluent :
+            </p>
+            <ul class="px-4">
+                <li><h6>Gestion des étudiants</h6>Inscription des étudiants, suivi des performances académiques, et gestion des profils individuels.</li>
+                <li><h6>Gestion des cours</h6>Création et modification des programmes de cours, assignation des enseignants, et organisation des horaires.</li>
+                <li><h6>Planification des examens</h6>Configuration des calendriers d'examens, attribution des salles, et gestion des surveillants.</li>
+                <li><h6>Publication des résultats</h6>Saisie des notes, calcul des moyennes, et diffusion sécurisée des résultats aux étudiants.</li>
+            </ul>
+          
             <div class="w-100 d-flex justify-content-end position-absolute bottom-0 ">
-                <a href="{{ route('exams.results.show') }}" class="btn btn-info ">consulter votre resultat</a>
+                <a href="{{ route('exams.results.show') }}" class="btn btn-info">Consulter votre résultat</a>
             </div>
         </div>
     </div>
 @endsection
+
